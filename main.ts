@@ -32,6 +32,111 @@ function Walk () {
     mySprite.setPosition(150, 101)
     mySprite.destroy()
 }
+// This function makes you choose between  your first two items in the stre.
+function First_choice () {
+    Apple = sprites.create(img`
+        . . . . . . . e c 7 . . . . . . 
+        . . . . e e e c 7 7 e e . . . . 
+        . . c e e e e c 7 e 2 2 e e . . 
+        . c e e e e e c 6 e e 2 2 2 e . 
+        . c e e e 2 e c c 2 4 5 4 2 e . 
+        c e e e 2 2 2 2 2 2 4 5 5 2 2 e 
+        c e e 2 2 2 2 2 2 2 2 4 4 2 2 e 
+        c e e 2 2 2 2 2 2 2 2 2 2 2 2 e 
+        c e e 2 2 2 2 2 2 2 2 2 2 2 2 e 
+        c e e 2 2 2 2 2 2 2 2 2 2 2 2 e 
+        c e e 2 2 2 2 2 2 2 2 2 2 4 2 e 
+        . e e e 2 2 2 2 2 2 2 2 2 4 e . 
+        . 2 e e 2 2 2 2 2 2 2 2 4 2 e . 
+        . . 2 e e 2 2 2 2 2 4 4 2 e . . 
+        . . . 2 2 e e 4 4 4 2 e e . . . 
+        . . . . . 2 2 e e e e . . . . . 
+        `, SpriteKind.Player)
+    Apple.setPosition(81, 101)
+    Pizza = sprites.create(img`
+        . . . . . . b b b b . . . . . . 
+        . . . . . . b 4 4 4 b . . . . . 
+        . . . . . . b b 4 4 4 b . . . . 
+        . . . . . b 4 b b b 4 4 b . . . 
+        . . . . b d 5 5 5 4 b 4 4 b . . 
+        . . . . b 3 2 3 5 5 4 e 4 4 b . 
+        . . . b d 2 2 2 5 7 5 4 e 4 4 e 
+        . . . b 5 3 2 3 5 5 5 5 e e e e 
+        . . b d 7 5 5 5 3 2 3 5 5 e e e 
+        . . b 5 5 5 5 5 2 2 2 5 5 d e e 
+        . b 3 2 3 5 7 5 3 2 3 5 d d e 4 
+        . b 2 2 2 5 5 5 5 5 5 d d e 4 . 
+        b d 3 2 d 5 5 5 d d d 4 4 . . . 
+        b 5 5 5 5 d d 4 4 4 4 . . . . . 
+        4 d d d 4 4 4 . . . . . . . . . 
+        4 4 4 4 . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    Pizza.setPosition(102, 101)
+    pause(500)
+    if (game.ask("Apple?")) {
+        game.splash("Apple $10")
+        info.changeScoreBy(-10)
+        Pizza.destroy()
+        pause(500)
+        mySprite.destroy()
+        mySprite = sprites.create(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . f f f f f f . . . . . 
+            . . . f f e e e e f 2 f . . . . 
+            . . f f e e e e f 2 2 2 f . . . 
+            . . f e e e f f e e e e f . . . 
+            . . f f f f e e 2 2 2 2 e f . . 
+            . . f e 2 2 2 f f f f e 2 f . . 
+            . f f f f f f f e e e f f f . . 
+            . f f e 4 4 e b f 4 4 e e f . . 
+            . f e e 4 d 4 1 f d d e f . . . 
+            . . f e e e e e d d d f . . . . 
+            . . . . f 4 d d e 4 e f . . . . 
+            . . . . f e d d e 2 2 f . . . . 
+            . . . f f f e e f 5 5 f f . . . 
+            . . . f f f f f f f f f f . . . 
+            . . . . f f . . . f f f . . . . 
+            `, SpriteKind.Player)
+        mySprite.setPosition(81, 101)
+        pause(500)
+        Apple.destroy()
+        mySprite.setPosition(114, 101)
+        pause(500)
+        mySprite.setPosition(144, 101)
+        mySprite.destroy()
+    } else {
+        game.splash("Pizza $20")
+        info.changeScoreBy(-20)
+        Apple.destroy()
+        pause(500)
+        mySprite.destroy()
+        mySprite = sprites.create(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . f f f f f f . . . . . 
+            . . . f f e e e e f 2 f . . . . 
+            . . f f e e e e f 2 2 2 f . . . 
+            . . f e e e f f e e e e f . . . 
+            . . f f f f e e 2 2 2 2 e f . . 
+            . . f e 2 2 2 f f f f e 2 f . . 
+            . f f f f f f f e e e f f f . . 
+            . f f e 4 4 e b f 4 4 e e f . . 
+            . f e e 4 d 4 1 f d d e f . . . 
+            . . f e e e e e d d d f . . . . 
+            . . . . f 4 d d e 4 e f . . . . 
+            . . . . f e d d e 2 2 f . . . . 
+            . . . f f f e e f 5 5 f f . . . 
+            . . . f f f f f f f f f f . . . 
+            . . . . f f . . . f f f . . . . 
+            `, SpriteKind.Player)
+        mySprite.setPosition(102, 101)
+        pause(500)
+        Pizza.destroy()
+        mySprite.setPosition(114, 101)
+        pause(500)
+        mySprite.setPosition(144, 101)
+        mySprite.destroy()
+    }
+}
 // This code makes the character walk in the store and the countdown starts and he has a budget of 200$
 function Walk_in_store () {
     scene.setBackgroundImage(img`
@@ -179,6 +284,8 @@ function Walk_in_store () {
     info.startCountdown(300)
 }
 // Don't forget to comment your code as you work!
+let Pizza: Sprite = null
+let Apple: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundImage(img`
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -304,3 +411,4 @@ scene.setBackgroundImage(img`
     `)
 Walk()
 Walk_in_store()
+First_choice()
