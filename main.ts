@@ -73,7 +73,8 @@ function First_choice () {
         `, SpriteKind.Player)
     Pizza.setPosition(102, 101)
     pause(500)
-    if (game.ask("Apple?")) {
+    Decision = game.askForString("apple or pizza?")
+    if (Decision == "apple") {
         game.splash("Apple $10")
         info.changeScoreBy(-10)
         Pizza.destroy()
@@ -104,7 +105,7 @@ function First_choice () {
         pause(500)
         mySprite.setPosition(144, 101)
         mySprite.destroy()
-    } else {
+    } else if (Decision == "pizza") {
         game.splash("Pizza $20")
         info.changeScoreBy(-20)
         Apple.destroy()
@@ -284,6 +285,7 @@ function Walk_in_store () {
     info.startCountdown(300)
 }
 // Don't forget to comment your code as you work!
+let Decision = ""
 let Pizza: Sprite = null
 let Apple: Sprite = null
 let mySprite: Sprite = null
