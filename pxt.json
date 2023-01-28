@@ -1,5 +1,5 @@
 {
-    "name": "U5 Collaborative Coding Project",
+    "name": "U5 Collaborative Coding Project2",
     "description": "",
     "dependencies": {
         "device": "*"
@@ -8,7 +8,8 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "assets.json"
+        "assets.json",
+        "main.py"
     ],
     "testFiles": [
         "test.ts"
